@@ -7,7 +7,7 @@ package com.alphateam.gshackchallenge.Base;
 import android.app.Fragment;
 import android.app.FragmentManager;
 
-import com.alphateam.gshackchallenge.DI.Component.PerFragment;
+//import com.alphateam.gshackchallenge.DI.Component.PerFragment;
 
 import javax.inject.Named;
 
@@ -33,7 +33,7 @@ public abstract class BaseFragmentModule {
 
     @Provides
     @Named(CHILD_FRAGMENT_MANAGER)
-    @PerFragment
+  //  @PerFragment
     static FragmentManager childFragmentManager(@Named(FRAGMENT) Fragment fragment) {
         return fragment.getChildFragmentManager();
     }

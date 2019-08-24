@@ -5,13 +5,14 @@ import com.alphateam.gshackchallenge.Base.BaseView;
 
 import javax.inject.Inject;
 
+//@PerActivity
 public class MainPresenterImpl extends BasePresenterImpl implements MainPresenter {
 
     MainView view;
 
-    @Inject
-    public MainPresenterImpl() {
-    }
+  //  @Inject
+  //  public MainPresenterImpl() {
+  //  }
 
     @Override
     public void register(BaseView view) {

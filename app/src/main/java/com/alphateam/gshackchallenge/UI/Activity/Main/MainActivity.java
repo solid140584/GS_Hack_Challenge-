@@ -16,7 +16,7 @@ import javax.inject.Inject;
 
 public class MainActivity extends BaseAppActivity implements MainPresenterImpl.MainView, SpeechRecognitionListener.SpListener {
 
-    @Inject
+   // @Inject
     MainPresenter presenter;
 
     @Override

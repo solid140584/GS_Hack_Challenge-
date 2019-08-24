@@ -19,7 +19,7 @@ import java.util.Locale;
 import javax.inject.Inject;
 
 import dagger.android.AndroidInjector;
-import dagger.android.DispatchingAndroidInjector;
+//import dagger.android.DispatchingAndroidInjector;
 import dagger.android.HasActivityInjector;
 
 /**
@@ -37,8 +37,8 @@ public class ApplicationBase extends MultiDexApplication {
     private SpeechRecognizer speechRecognizer;
     private TextToSpeech socioAsistente;
 
-    @Inject
-    DispatchingAndroidInjector<Activity> activityInjector;
+  //  @Inject
+  //  DispatchingAndroidInjector<Activity> activityInjector;
 
     public void onCreate() {
         super.onCreate();

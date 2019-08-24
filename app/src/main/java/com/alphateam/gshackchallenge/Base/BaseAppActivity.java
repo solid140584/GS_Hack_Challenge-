@@ -25,7 +25,7 @@ public class BaseAppActivity extends AppCompatActivity implements BaseView {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        AndroidInjection.inject(this);
+       // AndroidInjection.inject(this);
         socioAsistente = ApplicationBase.getIntance().getSocioAsistente();
         speechRecognizer = ApplicationBase.getIntance().getSpeechRecognizer();
 
