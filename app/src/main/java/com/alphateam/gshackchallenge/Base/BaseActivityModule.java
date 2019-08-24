@@ -1,13 +1,12 @@
 package com.alphateam.gshackchallenge.Base;
 
 /**
- * Created by ISC Jesús Romero Mtz on 23/09/2018
+ * Created by ISC Jesús Romero Mtz on 23/08/2019
  */
 
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.content.Context;
-
 
 import com.alphateam.gshackchallenge.DI.Component.PerActivity;
 

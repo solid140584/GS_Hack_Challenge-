@@ -20,6 +20,7 @@ public class MainActivity extends BaseAppActivity implements MainPresenterImpl.M
         setContentView(R.layout.activity_main);
 
         setPresenter();
+
     }
 
     @Override
@@ -31,7 +32,6 @@ public class MainActivity extends BaseAppActivity implements MainPresenterImpl.M
     public void setListeners() {
         super.setListeners();
     }
-
 
     @Override
     public void setPresenter() {
