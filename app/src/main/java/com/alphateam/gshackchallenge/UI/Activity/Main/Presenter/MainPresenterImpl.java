@@ -2,17 +2,18 @@ package com.alphateam.gshackchallenge.UI.Activity.Main.Presenter;
 
 import com.alphateam.gshackchallenge.Base.BasePresenterImpl;
 import com.alphateam.gshackchallenge.Base.BaseView;
+import com.alphateam.gshackchallenge.DI.Component.PerActivity;
 
 import javax.inject.Inject;
 
-//@PerActivity
+@PerActivity
 public class MainPresenterImpl extends BasePresenterImpl implements MainPresenter {
 
     MainView view;
 
-  //  @Inject
-  //  public MainPresenterImpl() {
-  //  }
+    @Inject
+    public MainPresenterImpl() {
+    }
 
     @Override
     public void register(BaseView view) {

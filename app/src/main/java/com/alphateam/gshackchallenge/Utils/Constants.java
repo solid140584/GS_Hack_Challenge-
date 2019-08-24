@@ -7,7 +7,5 @@ public class Constants {
 
     public static final String SHARED_PREFERENCES = "sharedPreferences";
     public static final String smPhotos = "Android/data/com.alphateam.gshackchallenge/files/Pictures";
-    public static final String IS_HTTPS = "https";
-    public static final String DOMAIN_URL = "https://www.google.com/";
 
 }

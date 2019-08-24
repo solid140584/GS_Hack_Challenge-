@@ -4,4 +4,25 @@
     <string name="location_permission_denied">This sample requires location permission to enable the \'my location\' layer. Please try again and grant access to use the location.\nIf the permission has been permanently denied, it can be enabled from the System Settings &gt; Apps &gt; \'Google Maps API Demos\'.</string>
     <string name="permission_required_toast">Es necesario activar la ubicación.</string>
     <string name="newPhoto">Agregar foto</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_momento">Mi momento</string>
+    <string name="title_dashboard">Top</string>
+    <string name="title_notifications">Mapa</string>
+    <string name="title_activity_mi_momento">Mi Momento Italika</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Mis Citas</string>
+    <string name="menu_gallery">Mi Credito</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+    <string name="title_catalogo">Catálogo</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="miMomento">Mi momento Italika</string>
 </resources>

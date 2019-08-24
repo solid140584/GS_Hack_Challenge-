@@ -10,8 +10,7 @@ import android.support.multidex.MultiDexApplication;
 import android.util.Log;
 import android.widget.Toast;
 
-//import com.alphateam.gshackchallenge.DI.Module.DaggerAppComponent;
-import com.alphateam.gshackchallenge.IO.Rest.ControllerAPI;
+import com.alphateam.gshackchallenge.DI.Module.DaggerAppComponent;
 import com.facebook.stetho.Stetho;
 
 import java.util.Locale;
@@ -19,31 +18,33 @@ import java.util.Locale;
 import javax.inject.Inject;
 
 import dagger.android.AndroidInjector;
-//import dagger.android.DispatchingAndroidInjector;
+import dagger.android.DispatchingAndroidInjector;
 import dagger.android.HasActivityInjector;
 
 /**
  * Created by ISC Jesús Romero Mtz on 24/08/2019
  */
-public class ApplicationBase extends MultiDexApplication {
+public class ApplicationBase extends MultiDexApplication implements HasActivityInjector {
 
     private static Context context;
     public static ApplicationBase instance;
     public static String IPDeviceAddress;
-    private ControllerAPI controllerAPI;
+    //private ControllerAPI controllerAPI;
 
+    private IntentFilter filter = new IntentFilter(Intent.ACTION_SCREEN_ON);
     private String setIdSesion;
     private String cookie;
-    private SpeechRecognizer speechRecognizer;
-    private TextToSpeech socioAsistente;
 
-  //  @Inject
-  //  DispatchingAndroidInjector<Activity> activityInjector;
+    private TextToSpeech socioAsistente;
+    private SpeechRecognizer speechRecognizer;
+
+    @Inject
+    DispatchingAndroidInjector<Activity> activityInjector;
 
     public void onCreate() {
         super.onCreate();
         initApplication();
-      //  DaggerAppComponent.builder().create(this).inject(this);
+        DaggerAppComponent.builder().create(this).inject(this);
     }
 
     public static ApplicationBase getIntance() {
@@ -55,11 +56,8 @@ public class ApplicationBase extends MultiDexApplication {
     }
 
     private void initApplication() {
-
         instance = this;
-
         context = getApplicationContext();
-
         Stetho.initializeWithDefaults(this);
 
         socioAsistente = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
@@ -81,26 +79,28 @@ public class ApplicationBase extends MultiDexApplication {
         });
 
         speechRecognizer = SpeechRecognizer.createSpeechRecognizer(this);
+
     }
 
     public static Context getAppContext() {
         return ApplicationBase.context;
     }
-
     public void setIdSesion(String setIdSesion) {
         this.setIdSesion = setIdSesion;
     }
-
     public String getIdSesion() {
         return this.setIdSesion;
     }
-
     public void setCookie(String cookie) {
         this.cookie = cookie;
     }
-
     public String getCookie() {
         return cookie;
+    }
+
+    @Override
+    public AndroidInjector<Activity> activityInjector() {
+        return activityInjector;
     }
 
     public SpeechRecognizer getSpeechRecognizer() {
@@ -118,7 +118,5 @@ public class ApplicationBase extends MultiDexApplication {
     public void setSocioAsistente(TextToSpeech socioAsistente) {
         this.socioAsistente = socioAsistente;
     }
-
-
 
 }

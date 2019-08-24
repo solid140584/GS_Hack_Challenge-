@@ -17,18 +17,17 @@ import dagger.android.AndroidInjection;
 
 public class BaseAppActivity extends AppCompatActivity implements BaseView {
 
+    public SpeechRecognitionListener speechRecognitionListener;
     public TextToSpeech socioAsistente;
     public SpeechRecognizer speechRecognizer;
-    public SpeechRecognitionListener speechRecognitionListener;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        AndroidInjection.inject(this);
 
-       // AndroidInjection.inject(this);
-        socioAsistente = ApplicationBase.getIntance().getSocioAsistente();
-        speechRecognizer = ApplicationBase.getIntance().getSpeechRecognizer();
-
+       // socioAsistente = ApplicationBase.getIntance().getSocioAsistente();
+       // speechRecognizer = ApplicationBase.getIntance().getSpeechRecognizer();
     }
 
     @Override
@@ -97,12 +96,10 @@ public class BaseAppActivity extends AppCompatActivity implements BaseView {
     }
 
     /**
-     * Permite al Asistente de Banco Azteca hablar un mensaje parametrizado.
+     * Permite a la Asistente SocioMAS hablar un mensaje parametrizado
      * @param mensaje
      */
     public void speakAsistente(String mensaje){
-
         socioAsistente.speak(mensaje, TextToSpeech.QUEUE_FLUSH, null, "");
-
     }
 }
