@@ -3,7 +3,6 @@ package com.alphateam.gshackchallenge.UI.Activity.Main.Presenter;
 import com.alphateam.gshackchallenge.Base.BasePresenterImpl;
 import com.alphateam.gshackchallenge.Base.BaseView;
 import com.alphateam.gshackchallenge.DI.Component.PerActivity;
-import com.alphateam.gshackchallenge.UI.Activity.Main.Presenter.MainPresenter;
 
 import javax.inject.Inject;
 

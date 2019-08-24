@@ -7,7 +7,7 @@ package com.alphateam.gshackchallenge.Base;
 import android.app.Fragment;
 import android.app.FragmentManager;
 
-
+import com.alphateam.gshackchallenge.DI.Component.PerFragment;
 
 import javax.inject.Named;
 

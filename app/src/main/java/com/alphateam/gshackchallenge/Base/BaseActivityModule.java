@@ -8,7 +8,8 @@ import android.app.Activity;
 import android.app.FragmentManager;
 import android.content.Context;
 
-import com.jrgames.reporteciudadano.DI.Component.PerActivity;
+
+import com.alphateam.gshackchallenge.DI.Component.PerActivity;
 
 import javax.inject.Named;
 

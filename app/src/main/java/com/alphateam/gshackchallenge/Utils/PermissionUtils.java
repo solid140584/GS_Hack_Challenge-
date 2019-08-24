@@ -1,4 +1,4 @@
-package com.alphateam.gshackchallenge.DI.Utils;
+package com.alphateam.gshackchallenge.Utils;
 
 import android.Manifest;
 import android.app.AlertDialog;

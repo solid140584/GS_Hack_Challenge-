@@ -2,10 +2,10 @@ package com.alphateam.gshackchallenge.DI.Module;
 
 import android.app.Application;
 
-
 import com.alphateam.gshackchallenge.DI.Component.PerActivity;
-import com.alphateam.gshackchallenge.DI.Utils.ApplicationBase;
+import com.alphateam.gshackchallenge.Utils.ApplicationBase;
 import com.alphateam.gshackchallenge.UI.Activity.Main.MainActivity;
+import com.alphateam.gshackchallenge.UI.Activity.Main.MainModule;
 
 import javax.inject.Singleton;
 
@@ -31,6 +31,6 @@ abstract class AppModule {
      */
     @PerActivity
     @ContributesAndroidInjector(modules = MainModule.class)
-    abstract MainActivity LoginActivityInjector();
+    abstract MainActivity MainActivityInjector();
 
 }

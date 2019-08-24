@@ -3,8 +3,9 @@ package com.alphateam.gshackchallenge.DI.UTIL;
 
 import android.app.Fragment;
 
-import com.jrgames.reporteciudadano.Base.BaseFragmentModule;
-import com.jrgames.reporteciudadano.DI.Component.PerFragment;
+
+import com.alphateam.gshackchallenge.Base.BaseFragmentModule;
+import com.alphateam.gshackchallenge.DI.Component.PerFragment;
 
 import javax.inject.Inject;
 import javax.inject.Named;

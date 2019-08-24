@@ -53,7 +53,7 @@ public class FragmentBaseLogin extends Fragment implements BaseView {
     }
 
     @Override
-    public void implementOnClickListener() {
+    public void setListeners() {
 
     }
 

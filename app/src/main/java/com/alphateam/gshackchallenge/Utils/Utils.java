@@ -1,4 +1,4 @@
-package com.alphateam.gshackchallenge.DI.Utils;
+package com.alphateam.gshackchallenge.Utils;
 
 import android.content.Context;
 import android.graphics.Bitmap;

@@ -5,7 +5,7 @@ import android.app.Activity;
 public interface BaseView {
 
     void initView();
-    void implementOnClickListener();
+    void setListeners();
     void setPresenter();
     void showLoader();
     void hideLoader();

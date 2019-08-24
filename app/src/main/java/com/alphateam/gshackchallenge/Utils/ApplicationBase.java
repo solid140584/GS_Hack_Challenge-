@@ -1,4 +1,4 @@
-package com.alphateam.gshackchallenge.DI.Utils;
+package com.alphateam.gshackchallenge.Utils;
 
 import android.app.Activity;
 import android.content.Context;
@@ -6,8 +6,8 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.support.multidex.MultiDexApplication;
 
+import com.alphateam.gshackchallenge.DI.Module.DaggerAppComponent;
 import com.facebook.stetho.Stetho;
-import com.jrgames.reporteciudadano.DI.Module.DaggerAppComponent;
 
 import javax.inject.Inject;
 
@@ -16,7 +16,7 @@ import dagger.android.DispatchingAndroidInjector;
 import dagger.android.HasActivityInjector;
 
 /**
- * Created by ISC Jesús Romero Mtz on 23/09/2018
+ * Created by ISC Jesús Romero Mtz on 24/08/2019
  */
 public class ApplicationBase extends MultiDexApplication implements HasActivityInjector {
 

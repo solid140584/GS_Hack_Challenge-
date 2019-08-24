@@ -1,6 +1,6 @@
 package com.alphateam.gshackchallenge.DI.Module;
 
-import com.alphateam.gshackchallenge.DI.Utils.ApplicationBase;
+import com.alphateam.gshackchallenge.Utils.ApplicationBase;
 
 import javax.inject.Singleton;
 
