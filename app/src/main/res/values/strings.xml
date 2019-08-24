@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">GS Hack Challenge</string>
+    <string name="permission_rationale_location">Para acceder al mapa, es necesario autorizar la ubicación en esta aplicación.</string>
+    <string name="location_permission_denied">This sample requires location permission to enable the \'my location\' layer. Please try again and grant access to use the location.\nIf the permission has been permanently denied, it can be enabled from the System Settings &gt; Apps &gt; \'Google Maps API Demos\'.</string>
+    <string name="permission_required_toast">Es necesario activar la ubicación.</string>
+    <string name="newPhoto">Agregar foto</string>
+</resources>
