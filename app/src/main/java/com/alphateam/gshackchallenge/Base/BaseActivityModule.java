@@ -8,8 +8,6 @@ import android.app.Activity;
 import android.app.FragmentManager;
 import android.content.Context;
 
-import com.alphateam.gshackchallenge.DI.Component.PerActivity;
-
 import javax.inject.Named;
 
 import dagger.Binds;
@@ -29,7 +27,6 @@ public abstract class BaseActivityModule {
     static final String ACTIVITY_FRAGMENT_MANAGER = "BaseActivityModule.activityFragmentManager";
 
     @Binds
-    @PerActivity
 
     /*
      * PerActivity annotation isn't necessary since Activity instance is unique but is here for
@@ -44,7 +41,6 @@ public abstract class BaseActivityModule {
 
     @Provides
     @Named(ACTIVITY_FRAGMENT_MANAGER)
-    @PerActivity
     static FragmentManager activityFragmentManager(Activity activity) {
         return activity.getFragmentManager();
     }
