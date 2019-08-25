@@ -11,10 +11,12 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.BottomSheetBehavior;
 import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.alphateam.gshackchallenge.Base.FragmentGSHackBase;
@@ -24,8 +26,9 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 
-public class FragmentGSMapa extends FragmentGSHackBase implements OnMapReadyCallback, LocationListener {
+public class FragmentGSMapa extends FragmentGSHackBase implements OnMapReadyCallback, LocationListener, GoogleMap.OnMarkerClickListener {
 
     private View view;
     private GoogleMap mMap;
@@ -36,6 +39,9 @@ public class FragmentGSMapa extends FragmentGSHackBase implements OnMapReadyCall
     private static final int LOCATION_TIME = 5000;
     private static final int LOCATION_DISTANCE = 10;
     public static final String TAG = FragmentGSMapa.class.getSimpleName();
+    private BottomSheetBehavior sheetBehavior;
+    private RelativeLayout bottom_sheet;
+    private LatLng myUbicacion;
     /**
      * Metodo para enviar parametros desde la Activity
      * @param args
@@ -65,6 +71,10 @@ public class FragmentGSMapa extends FragmentGSHackBase implements OnMapReadyCall
 
         }
 
+        bottom_sheet = view.findViewById(R.id.bottom_sheet); //Casteamos el lienzo de nuestro bottom sheet
+        sheetBehavior = BottomSheetBehavior.from(bottom_sheet);// Le notificamos a nuestro bottom sheet que el RelativeLayout, será nuestro lienzo
+
+        //ciAdam = view.findViewById(R.id.ciAdam);//TODO Ejemplo
         locationManager = (LocationManager) getContext().getSystemService(Context.LOCATION_SERVICE);
         locationListener = this;
 
@@ -81,7 +91,34 @@ public class FragmentGSMapa extends FragmentGSHackBase implements OnMapReadyCall
 
         }
 
+        sheetBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
+            @Override
+            public void onStateChanged(@NonNull View view, int tipoDeEvento) {
+                switch (tipoDeEvento){
+                    case BottomSheetBehavior.STATE_EXPANDED: // El BottomSheet detectó el evento del control expandido
+
+                        if(mMap != null && myUbicacion != null){
+                            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(myUbicacion, 15f));
+                        }
+
+                        break;
+                    case BottomSheetBehavior.STATE_COLLAPSED: //El bottomSheet Detectó el evento del control colapsado
+
+                        if(mMap != null && myUbicacion != null){
+                            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(myUbicacion, 11f));
+                        }
+
+                        break;
+                }
+            }
+
+            @Override
+            public void onSlide(@NonNull View view, float v) {
+
+            }
+        });
     }
+
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
@@ -170,8 +207,38 @@ public class FragmentGSMapa extends FragmentGSHackBase implements OnMapReadyCall
             double lng = location.getLongitude();
 
             LatLng myUbicacion = new LatLng(lat,lng);
-
             mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(myUbicacion, 15f));
+
+
         }
     }
+
+
+    @Override
+    public boolean onMarkerClick(Marker marker) {
+
+        int tag = (int) marker.getTag(); //Obtenemos el tag del marker
+
+        //adam = listaPersonajes.get(tag); //llenamos nuestro objeto Adam con la lista obteniendo su posicion por merdio del tag
+
+        //if(adam != null) { //Validamos que el objeto adam no este nulo
+
+          //  setData(adam); //Pintamos los datos en nuestro Bottom Sheet
+
+        //}
+        return true;
+    }
+
+    private void setData(){ //TODO Falta definir objeto
+/*
+        ciAdam.setImageDrawable(ContextCompat.getDrawable(getContext(), adam.getImagen()));
+
+        tvNombre.setText(adam.getNombre());
+        tvTelefono.setText(String.valueOf(adam.getTel()));
+        tvDirecccion.setText(adam.getCiudadNacimiento());
+        tvFechaNacimiento.setText("Fecha de nacimiento: " + adam.getFechaNacimiento());
+        tvEdad.setText("Edad: " + String.valueOf(adam.getEdad()));
+*/
+    }
+
 }

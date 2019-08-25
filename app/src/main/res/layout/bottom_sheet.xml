@@ -1,6 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_sheet"
+    android:background="@android:color/white"
+    app:behavior_peekHeight="100dp"
+    app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
+    app:behavior_hideable="false">
 
-</LinearLayout>
+    <View
+        android:id="@+id/indicador"
+        android:layout_width="35dp"
+        android:layout_height="3dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorPrimary"/>
+
+    <ImageView
+        android:id="@+id/ivTienda"
+        android:layout_width="80dp"
+        android:layout_height="70dp"
+        android:src="@drawable/iv_tienda"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"/>
+
+    <TextView
+        android:id="@+id/tvNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Italika Insurgentes"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:layout_toRightOf="@+id/ivTienda"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="10dp"/>
+
+    <View
+        android:id="@+id/div"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@android:color/black"
+        android:layout_below="@+id/ivTienda"
+        android:layout_marginTop="10dp"/>
+
+    <ImageView
+        android:id="@+id/ivMaker"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@mipmap/ic_map"
+        android:layout_below="@+id/div"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"/>
+
+    <TextView
+        android:id="@+id/tvDireccion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Av. Insurgente Norte No. 450"
+        android:layout_below="@+id/div"
+        android:layout_marginTop="18dp"
+        android:layout_toRightOf="@+id/ivMaker"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="10dp"
+        android:textSize="12sp"/>
+
+
+
+    <ImageView
+        android:id="@+id/ivTel"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/tvDireccion"
+        android:src="@mipmap/ic_tel"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"/>
+
+    <TextView
+        android:id="@+id/tvTelefono"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5555941766"
+        android:layout_below="@+id/tvDireccion"
+        android:layout_marginTop="16dp"
+        android:layout_toRightOf="@+id/ivMaker"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="10dp"
+        android:textSize="12sp"/>
+
+    <ImageView
+        android:id="@+id/ivhorario"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/tvTelefono"
+        android:src="@mipmap/ic_horario"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"/>
+
+    <TextView
+        android:id="@+id/tvHorario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lunes a Sabado 09:00 - 19:00"
+        android:layout_below="@+id/tvTelefono"
+        android:layout_marginTop="16dp"
+        android:layout_toRightOf="@+id/ivMaker"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="10dp"
+        android:textSize="12sp"
+        android:layout_marginBottom="25dp"/>
+
+</RelativeLayout>
+
