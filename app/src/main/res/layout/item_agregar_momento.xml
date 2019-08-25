@@ -18,35 +18,61 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/tvMomento"
+            <EditText
+                android:id="@+id/etMomento"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
+                android:minHeight="80dp"
                 android:padding="10dp"
-                android:text="#MomentoItalika Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget vestibulum lacus. Nulla facilisi. Proin cursus dui nec iaculis condimentum. Nulla nisi urna, vehicula vitae gravida ac, pharetra sed dui. Sed tempus elit justo, vel tincidunt orci euismod ac. Donec porta mauris quis dapibus posuere. Sed dignissim pharetra scelerisque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
-Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce a malesuada lacus. In consequat, urna sit amet rhoncus ornare, mauris nisl ultrices mi, ac iaculis felis risus eget dolor. Nulla nec pretium ex, id rutrum arcu. Nullam quis dui id lacus condimentum mollis vel ac quam. Suspendisse et sollicitudin enim. Nullam pharetra lacinia ante, quis tempus arcu pellentesque ac. Nulla hendrerit fermentum risus in volutpat. Nulla mi leo, commodo at metus eget, gravida feugiat nunc. Vivamus."
+                android:background="@android:color/white"
+                android:hint="Describe tu momento Italika"
                 android:textSize="12dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/etMomento"
+                >
 
             <ImageView
                 android:id="@+id/imgGaleria"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_below="@+id/tvMomento"
-                android:layout_toLeftOf="@+id/imgCamera"
                 android:src="@drawable/ic_gallery"
                 android:layout_margin="10dp"
+                android:layout_centerVertical="true"
                 />
 
             <ImageView
                 android:id="@+id/imgCamera"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_below="@+id/tvMomento"
-                android:layout_alignParentEnd="true"
+                android:layout_toRightOf="@+id/imgGaleria"
                 android:src="@drawable/ic_add_photo"
+                android:layout_centerVertical="true"
                 android:layout_margin="10dp"
                 />
+
+            <ImageView
+                android:id="@+id/imgMiniatura"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="15dp"
+                android:layout_centerVertical="true"
+                android:visibility="gone"
+                />
+
+            <Button
+                android:id="@+id/btnMomento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/MomentoButton"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="10dp"
+                />
+            </RelativeLayout>
 
         </RelativeLayout>
 

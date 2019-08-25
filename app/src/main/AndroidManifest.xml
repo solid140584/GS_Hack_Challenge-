@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.alphateam.gshackchallenge">
 
     <!--
@@ -8,6 +9,10 @@
          location permissions for the 'MyLocation' functionality.
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:name=".Utils.ApplicationBase"
@@ -16,7 +21,29 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:networkSecurityConfig="@xml/security_config"
         android:theme="@style/AppTheme">
+        <activity android:name=".UI.Activity.Splash.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.alphateam.gshackchallenge"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:replace="android:authorities">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -33,17 +60,12 @@
         <activity
             android:name=".UI.Activity.MapsActivity"
             android:label="@string/title_activity_maps"></activity>
+
         <activity
             android:name=".UI.Activity.Home.MiMomentoActivity"
             android:label="@string/title_activity_mi_momento"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".UI.Activity.Main.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".UI.Activity.Main.MainActivity"></activity>
     </application>
 
 </manifest>

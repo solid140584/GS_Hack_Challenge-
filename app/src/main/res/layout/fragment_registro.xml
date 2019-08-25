@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.Fragment.Registro.FragmentRegistro"
+    android:id="@+id/svRegistro">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvNombre1Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"/>
+
+        <EditText
+            android:id="@+id/etNombre1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvNombre1Title"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"/>
+
+        <TextView
+            android:id="@+id/tvNombre2Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Segundo nombre"
+            android:layout_below="@+id/etNombre1"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"/>
+
+        <EditText
+            android:id="@+id/etNombre2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvNombre2Title"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"/>
+
+        <TextView
+            android:id="@+id/tvApPaternoTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Apellido paterno"
+            android:layout_below="@+id/etNombre2"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"/>
+
+        <EditText
+            android:id="@+id/etApPaterno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvApPaternoTitle"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"/>
+
+        <TextView
+            android:id="@+id/tvApMaternoTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Apellido materno"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/etApPaterno"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"/>
+
+        <EditText
+            android:id="@+id/etApMaterno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/tvApMaternoTitle"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"/>
+
+        <TextView
+            android:id="@+id/tvGeneroTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Genero"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/etApMaterno"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:visibility="gone"/>
+
+        <Spinner
+            android:id="@+id/spGenero"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_below="@id/tvGeneroTitle"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tvTelefonoTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Telefono"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/spGenero"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"/>
+
+        <EditText
+            android:id="@+id/etTelefono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/tvTelefonoTitle"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"/>
+
+        <TextView
+            android:id="@+id/tvEmailTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/etTelefono"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"/>
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/tvEmailTitle"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"/>
+
+        <TextView
+            android:id="@+id/tvCiudadTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ciudad"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/etEmail"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"/>
+
+        <EditText
+            android:id="@+id/etCiudad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/tvCiudadTitle"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"/>
+
+        <TextView
+            android:id="@+id/tvContrasenaTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Contraseña"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/etCiudad"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"/>
+
+        <EditText
+            android:id="@+id/etContrasena"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/tvContrasenaTitle"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"/>
+
+        <TextView
+            android:id="@+id/tvConfirmarContrasenaTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Confirmar contraseña"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/etContrasena"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"/>
+
+        <EditText
+            android:id="@+id/etConfirmarContrasena"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/tvConfirmarContrasenaTitle"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"/>
+
+        <Button
+            android:id="@+id/btnRegistrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="20dp"
+            android:text="Registrar"
+            android:layout_below="@+id/etConfirmarContrasena"
+            android:background="@drawable/background_button"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:elevation="4dp"/>
+
+    </RelativeLayout>
+
+
+</ScrollView>

@@ -1,9 +1,10 @@
 package com.alphateam.gshackchallenge.Base;
 
+import android.app.Activity;
 import android.support.v4.app.Fragment;
 import com.alphateam.gshackchallenge.UI.Activity.Home.MiMomentoActivity;
 
-public class FragmentGSHackBase extends Fragment {
+public class FragmentGSHackBase extends Fragment implements BaseView{
 
     /**
      * Este metodo se implementa desde la Base y permite comunicarse (cambiar fragmentos)desde un Fragment
@@ -13,7 +14,7 @@ public class FragmentGSHackBase extends Fragment {
      * @param animation
      * Booleano que determina si deseas mostrar una Animación
      */
-    public void startFragment(Fragment fragment, String TAG, boolean backStack, boolean animation){
+    public void pushFragment(Fragment fragment, String TAG, boolean backStack, boolean animation){
 
         if(getActivity()!=null){
             MiMomentoActivity act = (MiMomentoActivity)getActivity();
@@ -51,5 +52,35 @@ public class FragmentGSHackBase extends Fragment {
             MiMomentoActivity act = (MiMomentoActivity)getActivity();
             act.showMensaje(mensaje);
         }
+    }
+
+    @Override
+    public void initView() {
+
+    }
+
+    @Override
+    public void setListeners() {
+
+    }
+
+    @Override
+    public void setPresenter() {
+
+    }
+
+    @Override
+    public void showLoader() {
+
+    }
+
+    @Override
+    public void hideLoader() {
+
+    }
+
+    @Override
+    public Activity getActivityInstance() {
+        return null;
     }
 }

@@ -23,6 +23,12 @@
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
     <string name="title_catalogo">Catálogo</string>
+    <string name="etUserText">Nombre</string>
+    <string name="etPassText">Contraseña</string>
+    <string name="initSession">Acceder</string>
+    <string name="registrate">¿Nuevo usuario?</string>
     <string name="title_activity_maps">Map</string>
     <string name="miMomento">Mi momento Italika</string>
+    <string name="catalogos">Catálogos</string>
+    <string name="title">Categoria</string>
 </resources>

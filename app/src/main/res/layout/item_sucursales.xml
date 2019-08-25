@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/rlContent"
+    android:layout_margin="2dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cvMoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="0dp"
+        app:cardCornerRadius="9dp">
+
+        <ImageView
+            android:id="@+id/ivMoto"
+            android:layout_width="120dp"
+            android:layout_height="160dp"
+            android:src="@drawable/ic_motoneta" />
+
+    </android.support.v7.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/cvMoto"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="Motonetas"/>
+
+</RelativeLayout>

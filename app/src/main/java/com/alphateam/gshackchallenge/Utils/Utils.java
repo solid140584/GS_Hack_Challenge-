@@ -3,10 +3,13 @@ package com.alphateam.gshackchallenge.Utils;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Environment;
+import android.util.Base64;
 import android.util.Log;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -29,6 +32,23 @@ public class Utils {
             return true;
         }
         return true;
+    }
+
+    public static String encodeToBase64(Bitmap image) {
+        ByteArrayOutputStream byteArrayOS = new ByteArrayOutputStream();
+        image.compress(Bitmap.CompressFormat.JPEG, 30, byteArrayOS);
+        return Base64.encodeToString(byteArrayOS.toByteArray(), Base64.NO_WRAP);
+    }
+
+    public static int exifToDegrees(int exifOrientation) {
+        if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_90) {
+            return 90;
+        } else if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_180) {
+            return 180;
+        } else if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_270) {
+            return 270;
+        }
+        return 0;
     }
 
     public static Bitmap getThumbnailBitmap(Context context, Uri uri) throws FileNotFoundException, IOException {

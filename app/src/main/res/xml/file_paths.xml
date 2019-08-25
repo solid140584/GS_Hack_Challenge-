@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--path="Android/data/com.gruposalinas.elektra.sociomas/files/Pictures"/>-->
+<!--path="Android/data/com.gruposalinas.elektra.sociomas.staging/files/Pictures"/>-->
+<!--path="Android/data/com.gruposalinas.elektra.sociomas.debug/files/Pictures"/>-->
+<paths>
+    <external-path
+        name="my_images"
+        path="Android/data/com.alphateam.gshackchallenge/files/Pictures"/>
+</paths>

@@ -3,29 +3,27 @@ package com.alphateam.gshackchallenge.UI.Activity.Home;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.view.View;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.MenuItem;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.alphateam.gshackchallenge.Base.BaseAppActivity;
 import com.alphateam.gshackchallenge.R;
 import com.alphateam.gshackchallenge.UI.Activity.Home.Presenter.MiMomentoPresenter;
 import com.alphateam.gshackchallenge.UI.Activity.Home.Presenter.MiMomentoPresenterImpl;
-import com.alphateam.gshackchallenge.UI.Activity.Main.Presenter.MainPresenter;
+
+import com.alphateam.gshackchallenge.UI.Fragment.Catalogo.FragmentCatalogo;
+
 import com.alphateam.gshackchallenge.UI.Fragment.Mapa.FragmentGSMapa;
+import com.alphateam.gshackchallenge.UI.Fragment.Momentos.FragmentMomentos;
 
 import javax.inject.Inject;
 
@@ -61,6 +59,7 @@ public class MiMomentoActivity extends BaseAppActivity implements MiMomentoPrese
         BottomNavigationView navView = findViewById(R.id.btn_nav_view);
         mTextMessage = findViewById(R.id.message);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        pushFragment( FragmentMomentos.getInstantce( null),FragmentMomentos.TAG,false,false );
 
     }
 
@@ -162,7 +161,7 @@ public class MiMomentoActivity extends BaseAppActivity implements MiMomentoPrese
                 case R.id.nav_momento:
 
                     //TODO Fragment Mi momento
-
+                    pushFragment( FragmentMomentos.getInstantce( null ),FragmentMomentos.TAG ,true,true);
                     return true;
 
                 case R.id.nav_top:
@@ -173,7 +172,7 @@ public class MiMomentoActivity extends BaseAppActivity implements MiMomentoPrese
 
                 case R.id.nav_catalogo:
 
-                    //TODO Fragment catalogo
+                    pushFragment(FragmentCatalogo.getInstantce(null),FragmentCatalogo.TAG,true,true);
 
                     return true;
 

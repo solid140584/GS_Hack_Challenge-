@@ -5,6 +5,8 @@ import android.app.Application;
 import com.alphateam.gshackchallenge.DI.Component.PerActivity;
 import com.alphateam.gshackchallenge.UI.Activity.Home.MiMomentoActivity;
 import com.alphateam.gshackchallenge.UI.Activity.Home.MiMomentoModule;
+import com.alphateam.gshackchallenge.UI.Activity.Splash.SplashActivity;
+import com.alphateam.gshackchallenge.UI.Activity.Splash.SplashModule;
 import com.alphateam.gshackchallenge.Utils.ApplicationBase;
 import com.alphateam.gshackchallenge.UI.Activity.Main.MainActivity;
 import com.alphateam.gshackchallenge.UI.Activity.Main.MainModule;
@@ -37,5 +39,9 @@ abstract class AppModule {
     @PerActivity
     @ContributesAndroidInjector(modules = MiMomentoModule.class)
     abstract MiMomentoActivity MiMomentoActivityInjector();
+
+    @PerActivity
+    @ContributesAndroidInjector(modules = SplashModule.class)
+    abstract SplashActivity SplashActivityInjector();
 
 }

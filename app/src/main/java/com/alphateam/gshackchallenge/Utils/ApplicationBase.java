@@ -11,9 +11,14 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.alphateam.gshackchallenge.DI.Module.DaggerAppComponent;
+import com.alphateam.gshackchallenge.IO.Controllers.ControllerCatalogo;
+import com.alphateam.gshackchallenge.IO.Controllers.ControllerLogin;
+
+import com.alphateam.gshackchallenge.IO.Controllers.ControllerMomentos;
 import com.facebook.stetho.Stetho;
 
 import java.util.Locale;
+import java.util.ResourceBundle;
 
 import javax.inject.Inject;
 
@@ -29,7 +34,13 @@ public class ApplicationBase extends MultiDexApplication implements HasActivityI
     private static Context context;
     public static ApplicationBase instance;
     public static String IPDeviceAddress;
+    private ControllerMomentos controllerMomentos;
+    private ControllerCatalogo controllerCatalogo;
+
     //private ControllerAPI controllerAPI;
+    private ControllerLogin mControllerLogin;
+
+
 
     private IntentFilter filter = new IntentFilter(Intent.ACTION_SCREEN_ON);
     private String setIdSesion;
@@ -58,6 +69,7 @@ public class ApplicationBase extends MultiDexApplication implements HasActivityI
     private void initApplication() {
         instance = this;
         context = getApplicationContext();
+        controllerMomentos = new ControllerMomentos(context);
         Stetho.initializeWithDefaults(this);
 
         socioAsistente = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
@@ -80,6 +92,14 @@ public class ApplicationBase extends MultiDexApplication implements HasActivityI
 
         speechRecognizer = SpeechRecognizer.createSpeechRecognizer(this);
 
+        controllerMomentos = new ControllerMomentos(context);
+        controllerCatalogo = new ControllerCatalogo(context);
+        mControllerLogin = new ControllerLogin(context,"http://siidmex-001-site4.etempurl.com/Usuario/");
+
+    }
+
+    public ControllerMomentos getControllerMomentos(){
+        return controllerMomentos;
     }
 
     public static Context getAppContext() {
@@ -119,4 +139,25 @@ public class ApplicationBase extends MultiDexApplication implements HasActivityI
         this.socioAsistente = socioAsistente;
     }
 
+    public ControllerCatalogo getControllerCatalogo() {
+        return controllerCatalogo;
+    }
+
+    public void setControllerCatalogo(ControllerCatalogo controllerCatalogo) {
+        this.controllerCatalogo = controllerCatalogo;
+
+    }
+
+    public ControllerLogin getmControllerLogin() {
+        return mControllerLogin;
+    }
+
+    public void setmControllerLogin(ControllerLogin mControllerLogin) {
+        this.mControllerLogin = mControllerLogin;
+    }
+
+    public void setControllerMomentos(ControllerMomentos controllerMomentos) {
+        this.controllerMomentos = controllerMomentos;
+
+    }
 }
